@@ -1,7 +1,8 @@
+import MenuCarrousel from "./components/MenuCarrousel";
 function App() {
   return (
     <>
-      <h1>Hello</h1>
+      <MenuCarrousel />
     </>
   );
 }
