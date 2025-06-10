@@ -8,7 +8,12 @@ export default function MenuCarrousel() {
   return (
     <Carousel>
       <Carousel.Item>
-        <Image src={friedrice} width={500} height={500} alt="Fried rice" />
+        <Image
+          src={friedrice}
+          width={"100%"}
+          height={"100%"}
+          alt="Fried rice"
+        />
         <Carousel.Caption>
           <h3>Fried Rice</h3>
         </Carousel.Caption>
@@ -16,8 +21,8 @@ export default function MenuCarrousel() {
       <Carousel.Item>
         <Image
           src={jollofchicken}
-          width={500}
-          height={500}
+          width={"100%"}
+          height={"100%"}
           alt="Jollof chicken"
         />
         <Carousel.Caption>
@@ -27,8 +32,8 @@ export default function MenuCarrousel() {
       <Carousel.Item>
         <Image
           src={jollofplantain}
-          width={500}
-          height={500}
+          width={"100%"}
+          height={"100%"}
           alt="Jollof plantain"
         />
         <Carousel.Caption>
