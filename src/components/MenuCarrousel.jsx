@@ -1,3 +1,4 @@
+import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Image from "react-bootstrap/Image";
 import friedrice from "../assets/friedrice.webp";
