@@ -9,12 +9,7 @@ export default function MenuCarrousel() {
   return (
     <Carousel>
       <Carousel.Item>
-        <Image
-          src={friedrice}
-          width={"100%"}
-          height={"100%"}
-          alt="Fried rice"
-        />
+        <Image src={friedrice} width={"80%"} height={"100%"} alt="Fried rice" />
         <Carousel.Caption>
           <h3>Fried Rice</h3>
         </Carousel.Caption>
