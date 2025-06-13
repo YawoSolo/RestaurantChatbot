@@ -87,6 +87,8 @@ export default function ChatForm() {
           await addDoc(collection(db, "users", user.uid, "orders"), {
             items: pendingOrder,
             createdAt: new Date(),
+            status: "new",
+            userId: user.uid,
           });
           setChatHistory((prev) => [
             ...prev,

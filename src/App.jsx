@@ -9,6 +9,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./components/firebase";
 import LoginPage from "./components/LoginPage";
 import MenuCarrousel from "./components/MenuCarrousel";
+import AdminLogin from "./components/AdminLogin";
+import AdminOrders from "./components/AdminOrders";
 
 function ProtectedRoute({ children }) {
   const [user, loading] = useAuthState(auth);
@@ -43,6 +45,8 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="/admin" element={<AdminLogin />} />
+            <Route path="/admin/orders" element={<AdminOrders />} />
           </Routes>
         </div>
         <Footer />
