@@ -36,7 +36,7 @@ export default function Header() {
                 as={Link}
                 to={location.pathname === "/history" ? "/chat" : "/history"}
               >
-                {location.pathname === "/history" ? "Back" : "History"}
+                {location.pathname === "/history" ? "Back" : "Orders"}
               </Nav.Link>
             )}
             {user && (
