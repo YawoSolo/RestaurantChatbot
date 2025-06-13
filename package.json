@@ -13,7 +13,9 @@
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "bootstrap": "^5.3.6",
+    "dotenv": "^16.5.0",
     "firebase": "^11.9.1",
+    "firebase-admin": "^13.4.0",
     "framer-motion": "^12.17.0",
     "generative-ai": "^0.1.4",
     "react": "^19.1.0",
