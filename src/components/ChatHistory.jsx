@@ -1,3 +1,4 @@
+import React from "react";
 import "./ChatHistory.css";
 
 export default function ChatHistory({ chatHistory }) {
