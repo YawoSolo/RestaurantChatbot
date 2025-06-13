@@ -1,6 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { test, expect } from "vitest";
+
+vi.mock("react-firebase-hooks/auth", ()=>({
+  useAuthState: () => [null, false, null],
+}))
 import App from "./src/App";
 test("renders welcome message", () => {
   render(<App />);
