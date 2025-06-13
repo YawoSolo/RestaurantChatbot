@@ -12,18 +12,8 @@ vi.mock("react-firebase-hooks/auth", () => ({
 
 test("renders welcome message", () => {
   render(<App />);
-  const welcomeElement = screen.getByText(/Welcome/i);
+  const welcomeElement = screen.getByText(
+    /👋 Welcome! Here is our menu. Please select your items and quantities, then confirm your order./i
+  );
   expect(welcomeElement).toBeInTheDocument();
 });
-
-// test("renders sign in message", () => {
-//   render(
-//     <BrowserRouter>
-//       <LoginPage />
-//     </BrowserRouter>
-//   );
-//   const greetings = screen.getAllByText((content) =>
-//     content.includes("Sign in with Google")
-//   );
-//   expect(greetings[0]).toBeInTheDocument();
-// });

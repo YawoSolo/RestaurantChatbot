@@ -32,9 +32,12 @@ export default function AdminOrders() {
   }, []);
 
   const fetchOrders = async () => {
-    const q = query(collectionGroup(db, "orders"), orderBy("createdAt", "desc"));
+    const q = query(
+      collectionGroup(db, "orders"),
+      orderBy("createdAt", "desc")
+    );
     const snapshot = await getDocs(q);
-    const allOrders = snapshot.docs.map(docSnap => ({
+    const allOrders = snapshot.docs.map((docSnap) => ({
       id: docSnap.id,
       ref: docSnap.ref,
       ...docSnap.data(),
@@ -49,7 +52,7 @@ export default function AdminOrders() {
 
   // Group orders by status
   const grouped = STATUS_OPTIONS.reduce((acc, status) => {
-    acc[status] = orders.filter(order => order.status === status);
+    acc[status] = orders.filter((order) => order.status === status);
     return acc;
   }, {});
 
@@ -57,7 +60,9 @@ export default function AdminOrders() {
     <Card className="p-3 mt-3 mb-3">
       <Row className="align-items-center mb-3">
         <Col>
-          <Card.Title className="mb-0 text-center">Admin Order Management</Card.Title>
+          <Card.Title className="mb-0 text-center">
+            Admin Order Management
+          </Card.Title>
         </Col>
         <Col xs="auto">
           <Button variant="outline-danger" onClick={handleLogout}>
@@ -65,7 +70,7 @@ export default function AdminOrders() {
           </Button>
         </Col>
       </Row>
-      {STATUS_OPTIONS.map(status => (
+      {STATUS_OPTIONS.map((status) => (
         <div key={status} className="mb-4">
           <h5>
             {status.charAt(0).toUpperCase() + status.slice(1)}{" "}
@@ -83,7 +88,7 @@ export default function AdminOrders() {
             </thead>
             <tbody>
               {grouped[status]?.length ? (
-                grouped[status].map(order => (
+                grouped[status].map((order) => (
                   <tr key={order.id}>
                     <td>{order.userId || "N/A"}</td>
                     <td>
@@ -101,20 +106,22 @@ export default function AdminOrders() {
                         : ""}
                     </td>
                     <td>
-                      <Badge bg={
-                        status === "new"
-                          ? "info"
-                          : status === "in progress"
-                          ? "warning"
-                          : status === "completed"
-                          ? "success"
-                          : "danger"
-                      }>
+                      <Badge
+                        bg={
+                          status === "new"
+                            ? "info"
+                            : status === "in progress"
+                            ? "warning"
+                            : status === "completed"
+                            ? "success"
+                            : "danger"
+                        }
+                      >
                         {status}
                       </Badge>
                     </td>
                     <td>
-                      {STATUS_OPTIONS.filter(s => s !== status).map(opt => (
+                      {STATUS_OPTIONS.filter((s) => s !== status).map((opt) => (
                         <Button
                           key={opt}
                           size="sm"
