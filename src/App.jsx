@@ -22,6 +22,7 @@ function App() {
   return (
     <Router>
       <Container className="d-flex flex-column min-vh-100 min-vw-100">
+        <Header />
         <MenuCarrousel className="mb-3 mt-3 align-items-center" />
         <div className="flex-grow-1 d-flex flex-column justify-content-center align-items-center">
           <Routes>
