@@ -1,27 +1,19 @@
-import { Card } from "react-bootstrap";
+import "./ChatHistory.css";
+
 export default function ChatHistory({ chatHistory }) {
   return (
-    <Card className="mb-2">
-      <Card.Body>
-        <Card.Text>
-          {chatHistory.map((chat, index) => (
-            <span
-              style={{ display: "block" }}
-              className={
-                chat.type === "user"
-                  ? "text-muted bg-body-tertiary p-2 rounded"
-                  : "text-dark bg-body-secondary p-2 rounded"
-              }
-              key={index}
-            >
-              <strong>
-                {chat.type === "user" ? "You:  " : "RESTAURANTBOT:  "}
-              </strong>
-              {chat.message}
-            </span>
-          ))}
-        </Card.Text>
-      </Card.Body>
-    </Card>
+    <div className="chat-history mb-2">
+      {chatHistory.map((chat, index) => (
+        <div
+          className={`chat-bubble ${chat.type === "user" ? "user" : "bot"}`}
+          key={index}
+        >
+          <span className="chat-author">
+            {chat.type === "user" ? "You" : "RESTAURANTBOT"}
+          </span>
+          {chat.message}
+        </div>
+      ))}
+    </div>
   );
 }

@@ -46,7 +46,7 @@ export default function OrderHistory() {
   };
 
   return (
-    <Card className="p-3">
+    <Card className="p-3 mb-3 mt-3">
       <Card.Title className="mb-0 text-center">Your Order History</Card.Title>
       <ListGroup variant="flush">
         {orders.length === 0 ? (
@@ -55,8 +55,15 @@ export default function OrderHistory() {
           orders.map((order) => (
             <ListGroup.Item key={order.id}>
               <div>
-                <strong>Order:</strong>{" "}
-                {order.items ? order.items.join(", ") : JSON.stringify(order)}
+                <strong>Order:</strong>
+                <ul>
+                  {order.items &&
+                    order.items.map((item, idx) => (
+                      <li key={idx}>
+                        {item.name} &times; {item.quantity}
+                      </li>
+                    ))}
+                </ul>
               </div>
               <div>
                 <strong>Date:</strong>{" "}
