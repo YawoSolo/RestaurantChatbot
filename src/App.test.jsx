@@ -1,8 +1,8 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { test, expect, vi } from "vitest";
-import App from "./src/App";
-import LoginPage from "./src/components/LoginPage";
+import App from "./App";
+import LoginPage from "./components/LoginPage";
 import { BrowserRouter } from "react-router-dom";
 
 // Mocking useAuthState to always return a user and not loading
